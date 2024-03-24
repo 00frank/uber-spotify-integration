@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 import { TransportsService } from './transports.service';
 
-@Controller()
+@Controller('transports')
 export class TransportsController {
-  constructor(private readonly transportsService: TransportsService) {}
+  constructor(private readonly transportsService: TransportsService) { }
 
+  //TODO: implement logic to return trips from userId
   @Get()
-  getHello(): string {
-    return this.transportsService.getHello();
+  getTripsFromPassenger() {
+    return this.transportsService.findAll();
   }
 }
